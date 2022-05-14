@@ -1,0 +1,40 @@
+//This configuration file is used to launch the application in debug mode. Replicate the configuration object many times as Lambda Functions you have.
+{
+  "configurations": [
+    {
+      "type": "aws-sam",
+      "request": "direct-invoke",
+      "name": "example-lambdas:ExampleFunction (nodejs14.x)",
+      "invokeTarget": {
+        "target": "template",
+        "templatePath": "${workspaceFolder}/example-lambdas/template.yaml",
+        "logicalId": "ExampleFunction"
+      },
+      "lambda": {
+        "payload": {},
+        "environmentVariables": {},
+        "runtime": "nodejs14.x"
+      }
+    },
+    {
+      "type": "aws-sam",
+      "request": "direct-invoke",
+      "name": "API example-lambdas:ExampleFunction (nodejs14.x)",
+      "invokeTarget": {
+        "target": "api",
+        "templatePath": "${workspaceFolder}/example-lambdas/template.yaml",
+        "logicalId": "ExampleFunction"
+      },
+      "api": {
+        "path": "/hello",
+        "httpMethod": "get",
+        "payload": {
+          "json": {}
+        }
+      },
+      "lambda": {
+        "runtime": "nodejs14.x"
+      }
+    }
+  ]
+}
