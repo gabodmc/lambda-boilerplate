@@ -6,6 +6,9 @@
   "repository": "https://github.com/awslabs/aws-sam-cli/tree/develop/samcli/local/init/templates/cookiecutter-aws-sam-hello-nodejs",
   "author": "SAM CLI",
   "license": "MIT",
+  "publishConfig": {
+    "@GABODMC:registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
     "aws-sdk": "^2.972.0",
     "axios": "0.24.0",
